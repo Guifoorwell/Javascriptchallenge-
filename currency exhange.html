@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Currency exchange application convert</title>
+        
+        <script>
+            function UsdXaf (amount){
+                return amount*650;
+            }
+            function XafUsd(amount){
+                return amount/650;
+            }
+            function convertUSDXAF(){
+                var usd = document.getElementById('usd_amount').value;
+                //alert(usd);
+                if(usd>0){
+                var xaf_computed = UsdXaf(usd);
+                document.getElementById('xaf_amount').value=xaf_computed;
+                
+                
+                }
+                else{
+                    alert("Please the Usd Amount must be numeric");
+                    exit();
+                }
+            }
+                function convertXAFUSD(){
+                    var xaf = document.getElementById('xaf_amount').value;
+                    //alert(usd);
+                    if(xaf>0){
+                        var usd_computed =XafUsd(xaf);
+                        document.getElementById('usd_amount').value=usd_computed;
+                        
+                    }else{
+                        alert("Please the xaf amount must be numeric");
+                        exit();
+                    }
+                }
+            
+        </script>
+        <style>
+
+            main{
+                text-align: center;
+                font-size: 30px;
+                border: solid;
+                margin: 0 auto;
+                background-color: black;
+                color: white;
+                
+                
+            }
+            input{
+                width: 40%;
+                font-weight: bold;
+                height: 2em;
+            }
+            .button{
+                width: 20%;
+                margin: 2em;
+                padding: 2em;
+                font-size: 18px;
+                font-weight: bold;
+                margin-right: 0;
+                margin-left: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <main>
+            
+        <h1>Currency exchange</h1>
+        <div class="inputrow">
+        <p>XAF:<input type="text" id="xaf_amount" name="xaf" placeholder="Amount in XAF"></p>
+        </div>
+        <p>USD:<input type="text"  id="usd_amount"name="usd" placeholder="Amount in USD"></p>
+        <p>
+            <button onclick="convertUSDXAF();" title="">USD_XAF</button>
+            <button onclick="convertXAFUSD();">XAF_USD </button> 
+        </p>
+            
+        </main>
+    </body>
+</html>
